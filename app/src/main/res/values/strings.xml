@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Blood Purification</string>
+    <string name="input1_hint">Pre-treatment bilirubin concentration</string>
+    <string name="input2_hint">Post-treatment bilirubin concentration</string>
+    <string name="input3_hint">Bilirubin concentration after 24h</string>
+    <string name="input4_hint">Average clearance</string>
+    <string name="button1_text">Calculate</string>
+</resources>
