@@ -3,16 +3,31 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation.xml"
-    app:startDestination="@id/mainActivity">
-
-    <activity
-        android:id="@+id/mainActivity"
-        android:name="com.example.bloodpurification.MainActivity"
-        android:label="activity_main"
-        tools:layout="@layout/activity_main" />
+    app:startDestination="@id/start">
     <fragment
-        android:id="@+id/graph"
-        android:name="com.example.bloodpurification.graph"
+        android:id="@+id/simulation"
+        android:name="com.example.bloodpurification.Simulation"
         android:label="fragment_graph"
         tools:layout="@layout/fragment_graph" />
+    <fragment
+        android:id="@+id/start"
+        android:name="com.example.bloodpurification.Start"
+        android:label="fragment_start"
+        tools:layout="@layout/fragment_start" >
+        <action
+            android:id="@+id/action_start_to_input"
+            app:destination="@id/input" />
+        <action
+            android:id="@+id/action_start_to_simulation"
+            app:destination="@id/simulation" />
+    </fragment>
+    <fragment
+        android:id="@+id/input"
+        android:name="com.example.bloodpurification.Input"
+        android:label="fragment_input"
+        tools:layout="@layout/fragment_input" >
+        <action
+            android:id="@+id/action_input_to_simulation"
+            app:destination="@id/simulation" />
+    </fragment>
 </navigation>

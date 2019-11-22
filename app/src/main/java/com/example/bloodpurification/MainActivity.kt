@@ -1,9 +1,8 @@
 package com.example.bloodpurification
 
 import android.os.Bundle
-import android.widget.Button
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.findNavController
 
 
 class MainActivity : AppCompatActivity() {
@@ -12,15 +11,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val button1 : Button = findViewById(R.id.calcButton)
-        button1.setOnClickListener {
-            calculate()
-        }
-
-    }
-
-    private fun calculate() {
-        Toast.makeText(this, "hello there",
-            Toast.LENGTH_SHORT).show()
+        val navController = this.findNavController(R.id.mainFragment)
+        navController.navigate(R.id.action_start_to_input)
     }
 }

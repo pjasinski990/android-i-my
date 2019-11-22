@@ -1,12 +1,17 @@
 <resources>
     <string name="app_name">Blood Purification</string>
-    <string name="input1_hint">Pre-treatment bilirubin concentration</string>
-    <string name="input2_hint">Post-treatment bilirubin concentration</string>
-    <string name="input3_hint">Bilirubin concentration after 24h</string>
-    <string name="input4_hint">Average clearance</string>
-    <string name="button1_text">Calculate</string>
-    <string name="input5_hint">Time of treatment</string>
+    <string name="start1_hint">Pre-treatment bilirubin concentration</string>
+    <string name="start2_hint">Post-treatment bilirubin concentration</string>
+    <string name="start3_hint">Bilirubin concentration after 24h</string>
+    <string name="start4_hint">Average clearance</string>
+    <string name="start5_hint">Time of treatment</string>
+    <string name="start_button_text">Calculate</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="input1_hint">Pre-treatment bilirubin concentration</string>
+    <string name="input2_hint">Total volume</string>
+    <string name="input3_hint">Intercompartmental clearance</string>
+    <string name="input4_hint">Bilirubin generation rate</string>
+    <string name="input5_hint">Average clearance</string>
+    <string name="input6_hint">Time of treatment</string>
+    <string name="input_button_text">Graph</string>
 </resources>
