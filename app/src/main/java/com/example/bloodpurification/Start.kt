@@ -4,10 +4,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
+import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
+import com.example.bloodpurification.databinding.FragmentStartBinding
 
 class Start : Fragment() {
     override fun onCreateView(
@@ -16,6 +16,14 @@ class Start : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        return inflater.inflate(R.layout.fragment_start, container, false)
+        val binding = DataBindingUtil.inflate<FragmentStartBinding>(inflater,
+            R.layout.fragment_start, container,false)
+
+        val navController = findNavController()
+        binding.startButton.setOnClickListener{
+            navController.navigate(R.id.action_start_to_input)
+        }
+
+        return binding.root
     }
 }

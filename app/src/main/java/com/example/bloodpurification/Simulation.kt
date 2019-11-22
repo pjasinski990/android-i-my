@@ -4,8 +4,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-
+import com.example.bloodpurification.databinding.FragmentGraphBinding
 
 class Simulation : Fragment() {
     override fun onCreateView(
@@ -14,7 +15,9 @@ class Simulation : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
+        val binding = DataBindingUtil.inflate<FragmentGraphBinding>(inflater,
+            R.layout.fragment_graph, container,false)
 
-        return inflater.inflate(R.layout.fragment_graph, container, false)
+        return binding.root
     }
 }
