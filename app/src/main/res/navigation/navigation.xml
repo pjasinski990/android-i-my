@@ -7,13 +7,13 @@
     <fragment
         android:id="@+id/simulation"
         android:name="com.example.bloodpurification.Simulation"
-        android:label="fragment_graph"
+        android:label="Graph"
         tools:layout="@layout/fragment_graph" />
     <fragment
         android:id="@+id/start"
         android:name="com.example.bloodpurification.Start"
-        android:label="fragment_start"
-        tools:layout="@layout/fragment_start" >
+        android:label="Home"
+        tools:layout="@layout/fragment_start">
         <action
             android:id="@+id/action_start_to_input"
             app:destination="@id/input" />
@@ -24,8 +24,8 @@
     <fragment
         android:id="@+id/input"
         android:name="com.example.bloodpurification.Input"
-        android:label="fragment_input"
-        tools:layout="@layout/fragment_input" >
+        android:label="Input"
+        tools:layout="@layout/fragment_input">
         <action
             android:id="@+id/action_input_to_simulation"
             app:destination="@id/simulation" />
