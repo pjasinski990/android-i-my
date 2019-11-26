@@ -5,7 +5,7 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".Simulation">
+        tools:context=".screens.simulation.Simulation">
 
         <com.jjoe64.graphview.GraphView
             android:layout_width="match_parent"
