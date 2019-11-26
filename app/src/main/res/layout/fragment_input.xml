@@ -7,7 +7,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:visibility="visible"
-        tools:context=".screens.input.Input">
+        tools:context=".screens.input.InputFragment">
 
         <EditText
             android:id="@+id/editText1"
@@ -64,12 +64,30 @@
             android:importantForAutofill="no"
             android:inputType="numberDecimal" />
 
+        <EditText
+            android:id="@+id/editText7"
+            style="@style/View1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/input7_hint"
+            android:importantForAutofill="no"
+            android:inputType="numberDecimal" />
+
+        <EditText
+            android:id="@+id/editText8"
+            style="@style/View1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/input8_hint"
+            android:importantForAutofill="no"
+            android:inputType="numberDecimal" />
+
         <Button
             android:id="@+id/inputButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginBottom="@dimen/button_margin"
+            android:layout_marginTop="@dimen/button_margin"
             android:padding="@dimen/button_padding"
             android:text="@string/input_button_text" />
 

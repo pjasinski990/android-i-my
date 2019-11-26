@@ -18,4 +18,6 @@
     <string name="start_menu_string">Home</string>
     <string name="input_menu_string">Input</string>
     <string name="graph_menu_string">Graph</string>
+    <string name="input7_hint">Post-treatment bilirubin concentration</string>
+    <string name="input8_hint">Concentration after 24h</string>
 </resources>

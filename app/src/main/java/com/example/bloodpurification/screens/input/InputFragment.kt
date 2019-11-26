@@ -1,4 +1,4 @@
-package com.example.bloodpurification.screens.start
+package com.example.bloodpurification.screens.input
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,21 +8,21 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.bloodpurification.R
-import com.example.bloodpurification.databinding.FragmentStartBinding
+import com.example.bloodpurification.databinding.FragmentInputBinding
 
-class Start : Fragment() {
+class InputFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
 
-        val binding = DataBindingUtil.inflate<FragmentStartBinding>(inflater,
-            R.layout.fragment_start, container,false)
+        val binding = DataBindingUtil.inflate<FragmentInputBinding>(inflater,
+            R.layout.fragment_input, container,false)
 
         val navController = findNavController()
-        binding.startButton.setOnClickListener{
-            navController.navigate(R.id.action_start_to_input)
+        binding.inputButton.setOnClickListener {
+            navController.navigate(R.id.action_input_to_simulation)
         }
 
         return binding.root
