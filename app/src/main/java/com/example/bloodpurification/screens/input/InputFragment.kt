@@ -11,27 +11,34 @@ import androidx.navigation.fragment.findNavController
 import com.example.bloodpurification.R
 import com.example.bloodpurification.databinding.FragmentInputBinding
 
-private lateinit var viewModel : InputFragmentViewModel
 
 class InputFragment : Fragment() {
+
+    private lateinit var viewModel: InputFragmentViewModel
+    private lateinit var binding : FragmentInputBinding
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val binding = DataBindingUtil.inflate<FragmentInputBinding>(inflater,
+        binding = DataBindingUtil.inflate(inflater,
             R.layout.fragment_input, container,false)
 
-        viewModel = ViewModelProviders.of(this).get(InputFragmentViewModel::class.java)
+        viewModel = activity?.run {
+            ViewModelProviders.of(this)[InputFragmentViewModel::class.java]
+        } ?: throw Exception("Invalid Activity")
 
 
         val navController = findNavController()
         binding.inputButton.setOnClickListener {
             navController.navigate(R.id.action_input_to_simulation)
         }
-
-
-
         return binding.root
+    }
+
+    override fun onDetach() {
+        super.onDetach()
+        viewModel.updateCEnd(binding.editText1.text.toString().toDouble())
     }
 }

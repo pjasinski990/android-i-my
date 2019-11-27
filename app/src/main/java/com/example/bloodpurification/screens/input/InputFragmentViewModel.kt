@@ -4,37 +4,37 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class InputFragmentViewModel : ViewModel(){
-    val cPre = MutableLiveData<Double>()
-    val cPost = MutableLiveData<Double>()
-    val cEnd = MutableLiveData<Double>()
-    val vTotal = MutableLiveData<Double>()
-    val clearanceInter = MutableLiveData<Double>()
-    val genRate = MutableLiveData<Double>()
-    val clearanceAvg = MutableLiveData<Double>()
-    val tTreatment= MutableLiveData<Double>()
+    private val _cPre = MutableLiveData<Double>()
+    private val _cPost = MutableLiveData<Double>()
+    private val _cEnd = MutableLiveData<Double>()
+    private val _vTotal = MutableLiveData<Double>()
+    private val _clearanceInter = MutableLiveData<Double>()
+    private val _genRate = MutableLiveData<Double>()
+    private val _clearanceAvg = MutableLiveData<Double>()
+    private val _tTreatment= MutableLiveData<Double>()
 
     fun updateCPre(newValue : Double) {
-        cPre.value = newValue
+        _cPre.value = newValue
     }
     fun updateCPost(newValue : Double) {
-        cPost.value = newValue
+        _cPost.value = newValue
     }
     fun updateCEnd(newValue : Double) {
-        cEnd.value = newValue
+        _cEnd.value = newValue
     }
     fun updateVTotal(newValue : Double) {
-        vTotal.value = newValue
+        _vTotal.value = newValue
     }
     fun updateClearanceInter(newValue : Double) {
-        clearanceInter.value = newValue
+        _clearanceInter.value = newValue
     }
     fun updateGenRate(newValue : Double) {
-        genRate.value = newValue
+        _genRate.value = newValue
     }
     fun updateClearanceAvg(newValue : Double) {
-        clearanceAvg.value = newValue
+        _clearanceAvg.value = newValue
     }
     fun updateTTreatment(newValue : Double) {
-        tTreatment.value = newValue
+        _tTreatment.value = newValue
     }
 }
