@@ -37,8 +37,5 @@ class InputFragment : Fragment() {
         return binding.root
     }
 
-    override fun onDetach() {
-        super.onDetach()
-        viewModel.updateCEnd(binding.editText1.text.toString().toDouble())
-    }
+
 }
