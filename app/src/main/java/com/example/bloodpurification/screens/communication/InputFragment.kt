@@ -1,8 +1,6 @@
 package com.example.bloodpurification.screens.communication
 
-import android.graphics.Color
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -33,8 +31,8 @@ class InputFragment : Fragment() {
             ViewModelProviders.of(this)[InputFragmentViewModel::class.java]
         } ?: throw Exception("Invalid Activity")
 
-
         navController = findNavController()
+
         binding.inputButton.setOnClickListener {
             sendData()
         }
@@ -124,19 +122,8 @@ class InputFragment : Fragment() {
             binding.editText8.error = getString(R.string.inputRequiredError)
         }
 
-
         if (!missingInput) {
             navController.navigate(R.id.action_input_to_simulation)
         }
-//            viewModel.updateCPost()
-//            viewModel.updateCPre()
-//            viewModel.updateClearanceAvg()
-//            viewModel.updateClearanceInter()
-//            viewModel.updateGenRate()
-//            viewModel.updateTTreatment()
-//            viewModel.updateVTotal()
-
     }
-
-
 }

@@ -1,95 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
-    <layout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:visibility="visible"
         tools:context=".screens.communication.InputFragment">
 
         <EditText
             android:id="@+id/editText1"
-            style="@style/View1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/InputTextStyle"
             android:layout_marginTop="@dimen/margin_top"
             android:hint="@string/input1_hint"
             android:importantForAutofill="no"
-            android:inputType="numberDecimal" />
+            android:inputType="numberDecimal"
+
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
 
         <EditText
             android:id="@+id/editText2"
-            style="@style/View1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/InputTextStyle"
             android:hint="@string/input2_hint"
             android:importantForAutofill="no"
-            android:inputType="numberDecimal" />
+            android:inputType="numberDecimal"
+
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editText1"/>
 
         <EditText
             android:id="@+id/editText3"
-            style="@style/View1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/InputTextStyle"
             android:hint="@string/input3_hint"
             android:importantForAutofill="no"
-            android:inputType="numberDecimal" />
+            android:inputType="numberDecimal"
+
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editText2"/>
 
         <EditText
             android:id="@+id/editText4"
-            style="@style/View1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/InputTextStyle"
             android:hint="@string/input4_hint"
             android:importantForAutofill="no"
-            android:inputType="numberDecimal" />
+            android:inputType="numberDecimal"
+
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editText3"/>
 
         <EditText
             android:id="@+id/editText5"
-            style="@style/View1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/InputTextStyle"
             android:hint="@string/input5_hint"
             android:importantForAutofill="no"
-            android:inputType="numberDecimal" />
+            android:inputType="numberDecimal"
+
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editText4"/>
 
         <EditText
             android:id="@+id/editText6"
-            style="@style/View1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/InputTextStyle"
             android:hint="@string/input6_hint"
             android:importantForAutofill="no"
-            android:inputType="numberDecimal" />
+            android:inputType="numberDecimal"
+
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editText5"/>
 
         <EditText
             android:id="@+id/editText7"
-            style="@style/View1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/InputTextStyle"
             android:hint="@string/input7_hint"
             android:importantForAutofill="no"
-            android:inputType="numberDecimal" />
+            android:inputType="numberDecimal"
+
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editText6"/>
 
         <EditText
             android:id="@+id/editText8"
-            style="@style/View1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/InputTextStyle"
             android:hint="@string/input8_hint"
             android:importantForAutofill="no"
-            android:inputType="numberDecimal" />
+            android:inputType="numberDecimal"
+
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editText7"/>
 
         <Button
             android:id="@+id/inputButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/ButtonStyle"
             android:layout_gravity="center"
-            android:layout_marginTop="@dimen/button_margin"
-            android:padding="@dimen/button_padding"
-            android:text="@string/input_button_text" />
+            android:text="@string/input_button_text"
 
-    </LinearLayout>
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -8,21 +8,20 @@
         android:layout_height="match_parent"
         tools:context=".screens.start.StartFragment">
 
-
         <EditText
-            style="@style/View1"
             android:id="@+id/editText1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/InputTextStyle"
             android:layout_marginTop="@dimen/margin_top"
             android:hint="@string/start1_hint"
             android:importantForAutofill="no"
             android:inputType="numberDecimal"
+
             app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            style="@style/View1"
+            style="@style/InputTextStyle"
             android:id="@+id/editText2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -34,7 +33,7 @@
 
 
         <EditText
-            style="@style/View1"
+            style="@style/InputTextStyle"
             android:id="@+id/editText3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -45,7 +44,7 @@
             app:layout_constraintTop_toBottomOf="@id/editText2" />
 
         <EditText
-            style="@style/View1"
+            style="@style/InputTextStyle"
             android:id="@+id/editText4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -56,7 +55,7 @@
             app:layout_constraintTop_toBottomOf="@id/editText3" />
 
         <EditText
-            style="@style/View1"
+            style="@style/InputTextStyle"
             android:id="@+id/editText5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -68,10 +67,7 @@
 
         <Button
             android:id="@+id/startButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/button_margin"
-            android:padding="@dimen/button_padding"
+            style="@style/ButtonStyle"
             android:text="@string/start_button_text"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
