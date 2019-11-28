@@ -7,7 +7,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:visibility="visible"
-        tools:context=".screens.input.InputFragment">
+        tools:context=".screens.communication.InputFragment">
 
         <EditText
             android:id="@+id/editText1"

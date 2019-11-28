@@ -1,4 +1,4 @@
-package com.example.bloodpurification.screens.simulation
+package com.example.bloodpurification.screens.communication
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -18,6 +18,8 @@ class SimulationFragment : Fragment() {
 
         val binding = DataBindingUtil.inflate<FragmentGraphBinding>(inflater,
             R.layout.fragment_graph, container,false)
+
+
 
         return binding.root
     }

@@ -1,4 +1,4 @@
-package com.example.bloodpurification.screens.input
+package com.example.bloodpurification.screens.communication
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
