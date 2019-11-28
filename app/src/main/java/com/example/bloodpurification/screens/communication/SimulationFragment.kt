@@ -19,8 +19,6 @@ class SimulationFragment : Fragment() {
         val binding = DataBindingUtil.inflate<FragmentGraphBinding>(inflater,
             R.layout.fragment_graph, container,false)
 
-
-
         return binding.root
     }
 }
