@@ -11,6 +11,7 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
 import com.example.bloodpurification.databinding.ActivityMainBinding
+import com.example.bloodpurification.screens.graph.GraphViewModel
 import com.example.bloodpurification.screens.input.InputViewModel
 import com.example.bloodpurification.screens.start.StartViewModel
 
@@ -19,6 +20,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var drawerLayout: DrawerLayout
     private lateinit var viewModelInput : InputViewModel
     private lateinit var viewModelStart : StartViewModel
+    private lateinit var viewModelGraph : GraphViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,6 +36,7 @@ class MainActivity : AppCompatActivity() {
 
         viewModelInput = ViewModelProviders.of(this).get(InputViewModel::class.java)
         viewModelStart = ViewModelProviders.of(this).get(StartViewModel::class.java)
+        viewModelGraph = ViewModelProviders.of(this).get(GraphViewModel::class.java)
 
         viewModelInput._cPre.observe(this, Observer<Double> { _cPre -> viewModelStart.updatesth(_cPre)})
 
