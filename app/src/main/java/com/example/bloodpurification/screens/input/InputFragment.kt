@@ -12,7 +12,6 @@ import androidx.navigation.fragment.findNavController
 import com.example.bloodpurification.R
 import com.example.bloodpurification.databinding.FragmentInputBinding
 
-
 class InputFragment : Fragment() {
 
     private lateinit var viewModel: InputViewModel
