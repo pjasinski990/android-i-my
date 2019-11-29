@@ -1,4 +1,4 @@
-package com.example.bloodpurification.screens.graph
+package com.example.bloodpurification.screens.input
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -15,7 +15,7 @@ import com.example.bloodpurification.databinding.FragmentInputBinding
 
 class InputFragment : Fragment() {
 
-    private lateinit var viewModel: SharedViewModel
+    private lateinit var viewModel: InputViewModel
     private lateinit var binding: FragmentInputBinding
     private lateinit var navController : NavController
 
@@ -28,7 +28,7 @@ class InputFragment : Fragment() {
             R.layout.fragment_input, container,false)
 
         viewModel = activity?.run {
-            ViewModelProviders.of(this)[SharedViewModel::class.java]
+            ViewModelProviders.of(this)[InputViewModel::class.java]
         } ?: throw Exception("Invalid Activity")
 
         navController = findNavController()
@@ -45,7 +45,7 @@ class InputFragment : Fragment() {
         // Concentration at start of the treatment
         var temp = binding.editText1.text.toString()
         if (temp != "") {
-            viewModel.updateCEnd(temp.toDouble())
+            viewModel.updateCPre(temp.toDouble())
         }
         else {
             missingInput = true
@@ -115,7 +115,7 @@ class InputFragment : Fragment() {
         // Concentration after 24h
         temp = binding.editText8.text.toString()
         if (temp != "") {
-            viewModel.updateCEnd(temp.toDouble())
+           viewModel.updateCEnd(temp.toDouble())
         }
         else {
             missingInput = true

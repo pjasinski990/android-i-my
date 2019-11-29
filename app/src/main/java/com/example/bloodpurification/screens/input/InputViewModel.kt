@@ -1,9 +1,9 @@
-package com.example.bloodpurification.screens.graph
+package com.example.bloodpurification.screens.input
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class SharedViewModel : ViewModel(){
+class InputViewModel : ViewModel(){
     private val _cPre = MutableLiveData<Double>()
     private val _cPost = MutableLiveData<Double>()
     private val _cEnd = MutableLiveData<Double>()
