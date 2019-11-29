@@ -1,4 +1,4 @@
-package com.example.bloodpurification.screens.communication
+package com.example.bloodpurification.screens.graph
 
 import android.os.Bundle
 import android.view.LayoutInflater

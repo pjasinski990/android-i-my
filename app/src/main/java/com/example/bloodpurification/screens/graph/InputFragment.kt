@@ -1,4 +1,4 @@
-package com.example.bloodpurification.screens.communication
+package com.example.bloodpurification.screens.graph
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -15,7 +15,7 @@ import com.example.bloodpurification.databinding.FragmentInputBinding
 
 class InputFragment : Fragment() {
 
-    private lateinit var viewModel: InputFragmentViewModel
+    private lateinit var viewModel: SharedViewModel
     private lateinit var binding: FragmentInputBinding
     private lateinit var navController : NavController
 
@@ -28,7 +28,7 @@ class InputFragment : Fragment() {
             R.layout.fragment_input, container,false)
 
         viewModel = activity?.run {
-            ViewModelProviders.of(this)[InputFragmentViewModel::class.java]
+            ViewModelProviders.of(this)[SharedViewModel::class.java]
         } ?: throw Exception("Invalid Activity")
 
         navController = findNavController()
