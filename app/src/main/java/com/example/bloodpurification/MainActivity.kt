@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.Observable
 import androidx.drawerlayout.widget.DrawerLayout
+import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
@@ -29,10 +30,12 @@ class MainActivity : AppCompatActivity() {
         NavigationUI.setupActionBarWithNavController(this, navController, drawerLayout)
         NavigationUI.setupWithNavController(binding.navView, navController)
 
+        binding.lifecycleOwner = this
+
         viewModelInput = ViewModelProviders.of(this).get(InputViewModel::class.java)
         viewModelStart = ViewModelProviders.of(this).get(StartViewModel::class.java)
 
-
+        viewModelInput._cPre.observe(this, Observer<Double> { _cPre -> viewModelStart.updatesth(_cPre)})
 
     }
 

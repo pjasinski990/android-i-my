@@ -4,14 +4,15 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class InputViewModel : ViewModel(){
-    private val _cPre = MutableLiveData<Double>()
+    val _cPre = MutableLiveData<Double>()
     private val _cPost = MutableLiveData<Double>()
     private val _cEnd = MutableLiveData<Double>()
     private val _vTotal = MutableLiveData<Double>()
     private val _clearanceInter = MutableLiveData<Double>()
     private val _genRate = MutableLiveData<Double>()
     private val _clearanceAvg = MutableLiveData<Double>()
-    private val _tTreatment= MutableLiveData<Double>()
+    private val _tTreatment = MutableLiveData<Double>()
+
 
     fun updateCPre(newValue : Double) {
         _cPre.value = newValue
