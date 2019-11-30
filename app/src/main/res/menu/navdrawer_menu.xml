@@ -4,11 +4,14 @@
 
     <item
         android:id="@+id/start"
+        android:icon="@drawable/home_icon"
         android:title="@string/start_menu_string" />
     <item
         android:id="@+id/input"
+        android:icon="@drawable/input_icon"
         android:title="@string/input_menu_string" />
     <item
         android:id="@+id/simulation"
+        android:icon="@drawable/graph_icon"
         android:title="@string/graph_menu_string" />
 </menu>

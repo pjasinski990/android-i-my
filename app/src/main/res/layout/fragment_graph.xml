@@ -5,13 +5,12 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".screens.simulation.SimulationFragment">
+        tools:context=".screens.graph.GraphFragment">
 
         <com.jjoe64.graphview.GraphView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
             android:id="@+id/graph"
-            />
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
     </FrameLayout>
 
 </layout>

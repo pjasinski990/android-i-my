@@ -1,16 +1,26 @@
 package com.example.bloodpurification
 
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.drawerlayout.widget.DrawerLayout
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
 import com.example.bloodpurification.databinding.ActivityMainBinding
+import com.example.bloodpurification.screens.graph.GraphViewModel
+import com.example.bloodpurification.screens.input.InputViewModel
+import com.example.bloodpurification.screens.start.StartViewModel
+import com.jjoe64.graphview.series.DataPoint
 
 
 class MainActivity : AppCompatActivity() {
     private lateinit var drawerLayout: DrawerLayout
+    private lateinit var viewModelInput : InputViewModel
+    private lateinit var viewModelStart : StartViewModel
+    private lateinit var viewModelGraph : GraphViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -18,11 +28,29 @@ class MainActivity : AppCompatActivity() {
         val binding = DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
         drawerLayout = binding.drawerLayout
 
-        val navController = this.findNavController(R.id.myNavHostFragment)
-        NavigationUI.setupActionBarWithNavController(this,navController, drawerLayout)
+        val navController = findNavController(R.id.myNavHostFragment)
+        NavigationUI.setupActionBarWithNavController(this, navController, drawerLayout)
         NavigationUI.setupWithNavController(binding.navView, navController)
 
+        binding.lifecycleOwner = this
 
+        viewModelInput = ViewModelProviders.of(this).get(InputViewModel::class.java)
+        viewModelStart = ViewModelProviders.of(this).get(StartViewModel::class.java)
+        viewModelGraph = ViewModelProviders.of(this).get(GraphViewModel::class.java)
+
+        viewModelInput.cEnd.observe(this, Observer<Double> { onInputUpdate() })
+
+    }
+
+    private fun onInputUpdate() {
+
+        val points = arrayOf(
+            DataPoint(0.toDouble(), viewModelInput.cPre.value!!),
+            DataPoint(viewModelInput.tTreatment.value!!, viewModelInput.cPost.value!!),
+            DataPoint(1440.toDouble(), viewModelInput.cEnd.value!!)
+        )
+
+        viewModelGraph.updateSeries(points)
     }
 
     override fun onSupportNavigateUp(): Boolean {

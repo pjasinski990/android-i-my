@@ -6,7 +6,7 @@
     app:startDestination="@id/start">
     <fragment
         android:id="@+id/simulation"
-        android:name="com.example.bloodpurification.screens.simulation.SimulationFragment"
+        android:name="com.example.bloodpurification.screens.graph.GraphFragment"
         android:label="Graph"
         tools:layout="@layout/fragment_graph" />
     <fragment

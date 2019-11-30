@@ -20,4 +20,7 @@
     <string name="graph_menu_string">Graph</string>
     <string name="input7_hint">Post-treatment bilirubin concentration</string>
     <string name="input8_hint">Concentration after 24h</string>
+    <string name="inputRequiredError">This field is required</string>
+    <string name="parametersText">Parameters</string>
+    <string name="pointsText">Points</string>
 </resources>

@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="margin_top">30dp</dimen>
-    <dimen name="button_margin">20dp</dimen>
     <dimen name="button_padding">30dp</dimen>
+    <dimen name="button_margin_bottom">20dp</dimen>
+    <dimen name="layouts_margin">10dp</dimen>
+    <dimen name="layouts_padding">10dp</dimen>
+    <dimen name="font_size_default">16sp</dimen>
+    <dimen name="font_size_small">10sp</dimen>
 </resources>
