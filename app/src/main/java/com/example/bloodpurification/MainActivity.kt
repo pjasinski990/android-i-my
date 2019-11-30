@@ -1,11 +1,10 @@
 package com.example.bloodpurification
 
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import androidx.databinding.Observable
 import androidx.drawerlayout.widget.DrawerLayout
-import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
@@ -14,6 +13,7 @@ import com.example.bloodpurification.databinding.ActivityMainBinding
 import com.example.bloodpurification.screens.graph.GraphViewModel
 import com.example.bloodpurification.screens.input.InputViewModel
 import com.example.bloodpurification.screens.start.StartViewModel
+import com.jjoe64.graphview.series.DataPoint
 
 
 class MainActivity : AppCompatActivity() {
@@ -38,8 +38,24 @@ class MainActivity : AppCompatActivity() {
         viewModelStart = ViewModelProviders.of(this).get(StartViewModel::class.java)
         viewModelGraph = ViewModelProviders.of(this).get(GraphViewModel::class.java)
 
-        viewModelInput._cPre.observe(this, Observer<Double> { _cPre -> viewModelStart.updatesth(_cPre)})
+        viewModelInput.cEnd.observe(this, Observer<Double> { onInputUpdate() })
 
+    }
+
+    private fun onInputUpdate() {
+
+        val points = arrayOf(
+            DataPoint(0.toDouble(), viewModelInput.cPre.value!!),
+            DataPoint(viewModelInput.tTreatment.value!!, viewModelInput.cPost.value!!),
+            DataPoint(1440.toDouble(), viewModelInput.cEnd.value!!)
+        )
+
+        Log.i("Main", viewModelInput.cEnd.value.toString())
+        Log.i("Main", viewModelInput.cPost.value.toString())
+        Log.i("Main", viewModelInput.cPre.value.toString())
+        Log.i("Main", viewModelInput.tTreatment.value.toString())
+
+        viewModelGraph.updateSeries(points)
     }
 
     override fun onSupportNavigateUp(): Boolean {

@@ -6,8 +6,7 @@ import androidx.lifecycle.ViewModel
 class StartViewModel : ViewModel() {
     var _somethin = MutableLiveData<Double>()
 
-    fun updatesth(newValue : Double){
+    fun updatesth(newValue: Double){
         _somethin.value = newValue
     }
-
 }
