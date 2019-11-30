@@ -8,104 +8,137 @@
         android:layout_height="match_parent"
         tools:context=".screens.input.InputFragment">
 
-        <EditText
-            android:id="@+id/editText1"
-            style="@style/InputTextStyle"
-            android:layout_marginTop="@dimen/margin_top"
-            android:hint="@string/input1_hint"
-            android:importantForAutofill="no"
-            android:inputType="numberDecimal"
-
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/parametersConstraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent">
 
-        <EditText
-            android:id="@+id/editText2"
-            style="@style/InputTextStyle"
-            android:hint="@string/input2_hint"
-            android:importantForAutofill="no"
-            android:inputType="numberDecimal"
+            <TextView
+                android:id="@+id/parametersLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/parametersText"
 
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <EditText
+                android:id="@+id/editText2"
+                style="@style/InputTextStyle"
+                android:hint="@string/input2_hint"
+                android:importantForAutofill="no"
+                android:inputType="numberDecimal"
+
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/parametersLabel" />
+
+            <EditText
+                android:id="@+id/editText3"
+                style="@style/InputTextStyle"
+                android:hint="@string/input3_hint"
+                android:importantForAutofill="no"
+                android:inputType="numberDecimal"
+
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editText2" />
+
+            <EditText
+                android:id="@+id/editText4"
+                style="@style/InputTextStyle"
+                android:hint="@string/input4_hint"
+                android:importantForAutofill="no"
+                android:inputType="numberDecimal"
+
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editText3" />
+
+            <EditText
+                android:id="@+id/editText5"
+                style="@style/InputTextStyle"
+                android:hint="@string/input5_hint"
+                android:importantForAutofill="no"
+                android:inputType="numberDecimal"
+
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editText4" />
+
+            <EditText
+                android:id="@+id/editText6"
+                style="@style/InputTextStyle"
+                android:hint="@string/input6_hint"
+                android:importantForAutofill="no"
+                android:inputType="numberDecimal"
+
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editText5" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText1"/>
+            app:layout_constraintTop_toBottomOf="@+id/parametersConstraintLayout">
 
-        <EditText
-            android:id="@+id/editText3"
-            style="@style/InputTextStyle"
-            android:hint="@string/input3_hint"
-            android:importantForAutofill="no"
-            android:inputType="numberDecimal"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText2"/>
+                <EditText
+                    android:id="@+id/editText1"
+                    style="@style/InputTextStyle"
+                    android:layout_marginTop="@dimen/margin_top"
+                    android:hint="@string/input1_hint"
+                    android:importantForAutofill="no"
+                    android:inputType="numberDecimal"
 
-        <EditText
-            android:id="@+id/editText4"
-            style="@style/InputTextStyle"
-            android:hint="@string/input4_hint"
-            android:importantForAutofill="no"
-            android:inputType="numberDecimal"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText3"/>
+                <EditText
+                    android:id="@+id/editText7"
+                    style="@style/InputTextStyle"
+                    android:hint="@string/input7_hint"
+                    android:importantForAutofill="no"
+                    android:inputType="numberDecimal"
 
-        <EditText
-            android:id="@+id/editText5"
-            style="@style/InputTextStyle"
-            android:hint="@string/input5_hint"
-            android:importantForAutofill="no"
-            android:inputType="numberDecimal"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/editText1" />
 
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText4"/>
+                <EditText
+                    android:id="@+id/editText8"
+                    style="@style/InputTextStyle"
+                    android:hint="@string/input8_hint"
+                    android:importantForAutofill="no"
+                    android:inputType="numberDecimal"
 
-        <EditText
-            android:id="@+id/editText6"
-            style="@style/InputTextStyle"
-            android:hint="@string/input6_hint"
-            android:importantForAutofill="no"
-            android:inputType="numberDecimal"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/editText7" />
 
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText5"/>
-
-        <EditText
-            android:id="@+id/editText7"
-            style="@style/InputTextStyle"
-            android:hint="@string/input7_hint"
-            android:importantForAutofill="no"
-            android:inputType="numberDecimal"
-
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText6"/>
-
-        <EditText
-            android:id="@+id/editText8"
-            style="@style/InputTextStyle"
-            android:hint="@string/input8_hint"
-            android:importantForAutofill="no"
-            android:inputType="numberDecimal"
-
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText7"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
 
         <Button
             android:id="@+id/inputButton"
             style="@style/ButtonStyle"
             android:layout_gravity="center"
-            android:text="@string/input_button_text"
-
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:text="@string/input_button_text" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

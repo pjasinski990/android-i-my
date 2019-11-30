@@ -50,11 +50,6 @@ class MainActivity : AppCompatActivity() {
             DataPoint(1440.toDouble(), viewModelInput.cEnd.value!!)
         )
 
-        Log.i("Main", viewModelInput.cEnd.value.toString())
-        Log.i("Main", viewModelInput.cPost.value.toString())
-        Log.i("Main", viewModelInput.cPre.value.toString())
-        Log.i("Main", viewModelInput.tTreatment.value.toString())
-
         viewModelGraph.updateSeries(points)
     }
 
