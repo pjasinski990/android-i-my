@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.example.bloodpurification.R
@@ -30,19 +29,24 @@ class GraphFragment : Fragment() {
 
         binding = DataBindingUtil.inflate(inflater,
             R.layout.fragment_graph, container,false)
+
         viewModel = ViewModelProviders.of(activity as FragmentActivity).get(GraphViewModel::class.java)
         viewModel.graphSeries.observe(this, Observer { drawGraph(viewModel.graphSeries.value)})
 
-        binding.graph.viewport.isScrollable = true
-        binding.graph.viewport.isScalable = true
-        binding.graph.viewport.isXAxisBoundsManual = true
-        binding.graph.viewport.setMinX(0.toDouble())
-        binding.graph.viewport.setMaxX(1440.toDouble())
-        binding.graph.viewport.isYAxisBoundsManual = true
-        binding.graph.viewport.setMinY(0.toDouble())
-        binding.graph.viewport.setMaxY(100.toDouble())
+        configureGraph(binding.graph)
 
         return binding.root
+    }
+
+    private fun configureGraph(graph: GraphView) {
+        graph.viewport.isScrollable = true
+        graph.viewport.isScalable = true
+        graph.viewport.isXAxisBoundsManual = true
+        graph.viewport.setMinX(0.toDouble())
+        graph.viewport.setMaxX(1440.toDouble())
+        graph.viewport.isYAxisBoundsManual = true
+        graph.viewport.setMinY(0.toDouble())
+        graph.viewport.setMaxY(100.toDouble())
     }
 
     private fun drawGraph(series: LineGraphSeries<DataPoint>?) {

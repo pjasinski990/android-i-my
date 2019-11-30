@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        style="@style/LayoutStyle"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".screens.start.StartFragment">
@@ -11,7 +12,6 @@
         <EditText
             android:id="@+id/editText1"
             style="@style/InputTextStyle"
-            android:layout_marginTop="@dimen/margin_top"
             android:hint="@string/start1_hint"
             android:importantForAutofill="no"
             android:inputType="numberDecimal"
@@ -68,6 +68,7 @@
         <Button
             android:id="@+id/startButton"
             style="@style/ButtonStyle"
+            android:layout_marginBottom="0dp"
             android:text="@string/start_button_text"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"

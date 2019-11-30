@@ -22,4 +22,5 @@
     <string name="input8_hint">Concentration after 24h</string>
     <string name="inputRequiredError">This field is required</string>
     <string name="parametersText">Parameters</string>
+    <string name="pointsText">Points</string>
 </resources>

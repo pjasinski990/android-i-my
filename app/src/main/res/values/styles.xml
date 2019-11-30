@@ -8,10 +8,19 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="LayoutStyle" parent="AppTheme">
+        <item name="android:layout_margin">@dimen/layouts_margin</item>
+        <item name="android:padding">@dimen/layouts_padding</item>
+    </style>
+
     <style name="InputTextStyle" parent="AppTheme">
-        <item name="android:layout_marginLeft">30dp</item>
-        <item name="android:layout_marginRight">30dp</item>
-        <item name="android:ems">10</item>
+        <item name="android:textSize">@dimen/font_size_default</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="LabelTextStyle" parent="AppTheme">
+        <item name="android:textSize">@dimen/font_size_small</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
     </style>
@@ -23,4 +32,5 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textAllCaps">true</item>
     </style>
+
 </resources>

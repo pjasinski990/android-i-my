@@ -10,6 +10,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/parametersConstraintLayout"
+            style="@style/LayoutStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -18,6 +19,7 @@
 
             <TextView
                 android:id="@+id/parametersLabel"
+                style="@style/LabelTextStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/parametersText"
@@ -91,20 +93,30 @@
             app:layout_constraintTop_toBottomOf="@+id/parametersConstraintLayout">
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                style="@style/LayoutStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/pointsLabel"
+                    style="@style/LabelTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pointsText"
+
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <EditText
                     android:id="@+id/editText1"
                     style="@style/InputTextStyle"
-                    android:layout_marginTop="@dimen/margin_top"
                     android:hint="@string/input1_hint"
                     android:importantForAutofill="no"
                     android:inputType="numberDecimal"
 
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toBottomOf="@id/pointsLabel"/>
 
                 <EditText
                     android:id="@+id/editText7"
