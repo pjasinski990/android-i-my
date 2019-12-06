@@ -7,6 +7,10 @@ import com.example.bloodpurification.recycler.Point
 
 class InputViewModel : ViewModel(){
     private val _pointsList = MutableLiveData<ArrayList<Point>>()
+    init {
+        _pointsList.value = ArrayList()
+    }
+
     val pointsList: LiveData<ArrayList<Point>>
     get() = _pointsList
 

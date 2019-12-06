@@ -19,6 +19,7 @@ class PointAdapter(private val pointsList: List<Point>?) : RecyclerView.Adapter<
     }
 
     override fun onBindViewHolder(holder: PointViewHolder, position: Int) {
+
     }
 
     class PointViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

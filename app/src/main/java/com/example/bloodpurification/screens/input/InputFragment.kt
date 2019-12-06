@@ -1,11 +1,9 @@
 package com.example.bloodpurification.screens.input
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
@@ -52,7 +50,7 @@ class InputFragment : Fragment() {
 
     private fun addPointView() {
         viewModel.addPoint()
-        adapter.notifyItemInserted(adapter.itemCount)
+        adapter.notifyItemInserted(adapter.itemCount-1)
     }
 
     private fun sendData() {
