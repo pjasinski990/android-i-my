@@ -1,16 +1,20 @@
 package com.example.bloodpurification.screens.input
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.bloodpurification.R
 import com.example.bloodpurification.databinding.FragmentInputBinding
+import com.example.bloodpurification.recycler.PointAdapter
 
 class InputFragment : Fragment() {
 
@@ -32,10 +36,23 @@ class InputFragment : Fragment() {
 
         navController = findNavController()
 
+        val adapter = PointAdapter(viewModel.pointsList.value)
+        binding.recycler.adapter = adapter
+        binding.recycler.layoutManager = LinearLayoutManager(this.context)
+
+        binding.addButton.setOnClickListener {
+            addPointView()
+        }
+
         binding.inputButton.setOnClickListener {
             sendData()
         }
         return binding.root
+    }
+
+    private fun addPointView() {
+        viewModel.addPoint()
+
     }
 
     private fun sendData() {
@@ -91,7 +108,7 @@ class InputFragment : Fragment() {
             binding.editText5.error = getString(R.string.inputRequiredError)
         }
 
-        // Time of tratment
+        // Time of treatment
         temp = binding.editText6.text.toString()
         if (temp != "") {
             viewModel.updateTTreatment(temp.toDouble())
