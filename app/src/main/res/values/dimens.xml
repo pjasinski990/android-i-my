@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="margin_top">30dp</dimen>
-    <dimen name="button_padding">30dp</dimen>
+    <dimen name="button_padding">20dp</dimen>
     <dimen name="button_margin_bottom">20dp</dimen>
     <dimen name="layouts_margin">10dp</dimen>
     <dimen name="layouts_padding">10dp</dimen>
