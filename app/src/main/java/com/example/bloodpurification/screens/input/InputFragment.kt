@@ -21,6 +21,7 @@ class InputFragment : Fragment() {
     private lateinit var viewModel: InputViewModel
     private lateinit var binding: FragmentInputBinding
     private lateinit var navController : NavController
+    private lateinit var adapter: PointAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -36,10 +37,9 @@ class InputFragment : Fragment() {
 
         navController = findNavController()
 
-        val adapter = PointAdapter(viewModel.pointsList.value)
+        adapter = PointAdapter(viewModel.pointsList.value)
         binding.recycler.adapter = adapter
         binding.recycler.layoutManager = LinearLayoutManager(this.context)
-
         binding.addButton.setOnClickListener {
             addPointView()
         }
@@ -52,7 +52,7 @@ class InputFragment : Fragment() {
 
     private fun addPointView() {
         viewModel.addPoint()
-
+        adapter.notifyItemInserted(adapter.itemCount)
     }
 
     private fun sendData() {
