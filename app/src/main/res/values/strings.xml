@@ -23,4 +23,7 @@
     <string name="inputRequiredError">This field is required</string>
     <string name="parametersText">Parameters</string>
     <string name="pointsText">Points</string>
+    <string name="concentration">concentration</string>
+    <string name="time">time: (minutes)</string>
+    <string name="add_button_text">Add</string>
 </resources>

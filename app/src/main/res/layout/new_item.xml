@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <EditText
+        android:id="@+id/concentrationInput"
+        style="@style/InputTextStyle"
+        android:layout_width="0dp"
+        android:layout_weight="0.5"
+        android:hint="@string/concentration"
+        android:importantForAutofill="no"
+        android:inputType="numberDecimal"/>
+
+    <EditText
+        android:id="@+id/timeInput"
+        style="@style/InputTextStyle"
+        android:layout_width="0dp"
+        android:layout_weight="0.5"
+        android:hint="@string/time"
+        android:importantForAutofill="no"
+        android:inputType="numberDecimal"/>
+
+    <Button
+        android:id="@+id/remove_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="X"/>
+
+</LinearLayout>

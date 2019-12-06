@@ -85,18 +85,14 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:isScrollContainer="false"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/parametersConstraintLayout">
-
             <androidx.constraintlayout.widget.ConstraintLayout
                 style="@style/LayoutStyle"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/parametersConstraintLayout"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"/>
+
 
                 <TextView
                     android:id="@+id/pointsLabel"
@@ -104,45 +100,62 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/pointsText"
-
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <EditText
-                    android:id="@+id/editText1"
-                    style="@style/InputTextStyle"
-                    android:hint="@string/input1_hint"
-                    android:importantForAutofill="no"
-                    android:inputType="numberDecimal"
-
+                <Button
+                    android:id="@+id/addButton"
+                    style="@style/ButtonStyle"
+                    android:layout_gravity="center"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/pointsLabel"/>
+                    app:layout_constraint_toBottomOf="parent"
+                    android:text="@string/add_button_text" />
 
-                <EditText
-                    android:id="@+id/editText7"
-                    style="@style/InputTextStyle"
-                    android:hint="@string/input7_hint"
-                    android:importantForAutofill="no"
-                    android:inputType="numberDecimal"
 
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/editText1" />
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/addedPoints"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"/>
 
-                <EditText
-                    android:id="@+id/editText8"
-                    style="@style/InputTextStyle"
-                    android:hint="@string/input8_hint"
-                    android:importantForAutofill="no"
-                    android:inputType="numberDecimal"
 
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/editText7" />
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </ScrollView>
+<!--                <EditText-->
+<!--                    android:id="@+id/editText1"-->
+<!--                    style="@style/InputTextStyle"-->
+<!--                    android:hint="@string/input1_hint"-->
+<!--                    android:importantForAutofill="no"-->
+<!--                    android:inputType="numberDecimal"-->
+
+<!--                    app:layout_constraintLeft_toLeftOf="parent"-->
+<!--                    app:layout_constraintRight_toRightOf="parent"-->
+<!--                    app:layout_constraintTop_toBottomOf="@id/pointsLabel"/>-->
+
+<!--                <EditText-->
+<!--                    android:id="@+id/editText7"-->
+<!--                    style="@style/InputTextStyle"-->
+<!--                    android:hint="@string/input7_hint"-->
+<!--                    android:importantForAutofill="no"-->
+<!--                    android:inputType="numberDecimal"-->
+
+<!--                    app:layout_constraintLeft_toLeftOf="parent"-->
+<!--                    app:layout_constraintRight_toRightOf="parent"-->
+<!--                    app:layout_constraintTop_toBottomOf="@+id/editText1" />-->
+
+<!--                <EditText-->
+<!--                    android:id="@+id/editText8"-->
+<!--                    style="@style/InputTextStyle"-->
+<!--                    android:hint="@string/input8_hint"-->
+<!--                    android:importantForAutofill="no"-->
+<!--                    android:inputType="numberDecimal"-->
+
+<!--                    app:layout_constraintLeft_toLeftOf="parent"-->
+<!--                    app:layout_constraintRight_toRightOf="parent"-->
+<!--                    app:layout_constraintTop_toBottomOf="@+id/editText7" />-->
+
 
         <Button
             android:id="@+id/inputButton"
