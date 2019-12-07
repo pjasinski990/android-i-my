@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import android.widget.LinearLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.example.bloodpurification.R
+import kotlinx.android.synthetic.main.new_item.view.*
 
 class PointAdapter(private val pointsList: List<Point>?) : RecyclerView.Adapter<PointAdapter.PointViewHolder>(){
 
@@ -24,6 +25,9 @@ class PointAdapter(private val pointsList: List<Point>?) : RecyclerView.Adapter<
 
     class PointViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun PointViewHolder(itemView: View) {
+            itemView.remove_button.setOnClickListener {
+
+            }
         }
     }
 }
