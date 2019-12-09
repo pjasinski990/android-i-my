@@ -3,12 +3,14 @@ package com.example.bloodpurification.recycler
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.LinearLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.example.bloodpurification.R
-import kotlinx.android.synthetic.main.new_item.view.*
 
-class PointAdapter(private val pointsList: List<Point>?) : RecyclerView.Adapter<PointAdapter.PointViewHolder>(){
+class PointAdapter(private val pointsList: ArrayList<Point>?) : RecyclerView.Adapter<PointAdapter.PointViewHolder>(){
+
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PointViewHolder {
         val v = LayoutInflater.from(parent.context).inflate(R.layout.new_item, parent, false) as LinearLayout
@@ -20,14 +22,13 @@ class PointAdapter(private val pointsList: List<Point>?) : RecyclerView.Adapter<
     }
 
     override fun onBindViewHolder(holder: PointViewHolder, position: Int) {
-
+        holder.button.setOnClickListener {
+            pointsList?.removeAt(position)
+            notifyDataSetChanged()
+        }
     }
 
     class PointViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        fun PointViewHolder(itemView: View) {
-            itemView.remove_button.setOnClickListener {
-
-            }
-        }
+        val button: Button = itemView.findViewById(R.id.remove_button)
     }
 }

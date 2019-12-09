@@ -1,5 +1,6 @@
 package com.example.bloodpurification.screens.start
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -16,7 +17,8 @@ class StartViewModel : ViewModel() {
 
     fun addPoint() {
         if (_pointsList.value == null) {
-            _pointsList.value = ArrayList()
+           Log.e("StartViewModel", "_pointsList.value is null, returning")
+            return
         }
         _pointsList.value!!.add(Point())
     }

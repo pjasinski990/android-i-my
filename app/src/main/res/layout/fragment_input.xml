@@ -14,21 +14,12 @@
             android:layout_weight="1"
             android:orientation="vertical">
 
-
-            <TextView
-                android:id="@+id/parametersLabel"
-                style="@style/LabelTextStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/parametersText"/>
-
             <EditText
                 android:id="@+id/editText2"
                 style="@style/InputTextStyle"
                 android:hint="@string/input2_hint"
                 android:importantForAutofill="no"
                 android:inputType="numberDecimal"/>
-
 
             <EditText
                 android:id="@+id/editText3"
@@ -37,14 +28,12 @@
                 android:importantForAutofill="no"
                 android:inputType="numberDecimal"/>
 
-
             <EditText
                 android:id="@+id/editText4"
                 style="@style/InputTextStyle"
                 android:hint="@string/input4_hint"
                 android:importantForAutofill="no"
                 android:inputType="numberDecimal"/>
-
 
             <EditText
                 android:id="@+id/editText5"
@@ -53,44 +42,10 @@
                 android:importantForAutofill="no"
                 android:inputType="numberDecimal"/>
 
-
             <EditText
                 android:id="@+id/editText6"
                 style="@style/InputTextStyle"
                 android:hint="@string/input6_hint"
-                android:importantForAutofill="no"
-                android:inputType="numberDecimal"/>
-
-
-
-            <TextView
-                android:id="@+id/pointsLabel"
-                style="@style/LabelTextStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/pointsText"/>
-
-
-            <EditText
-                android:id="@+id/editText1"
-                style="@style/InputTextStyle"
-                android:hint="@string/input1_hint"
-                android:importantForAutofill="no"
-                android:inputType="numberDecimal"/>
-
-
-            <EditText
-                android:id="@+id/editText7"
-                style="@style/InputTextStyle"
-                android:hint="@string/input7_hint"
-                android:importantForAutofill="no"
-                android:inputType="numberDecimal"/>
-
-
-            <EditText
-                android:id="@+id/editText8"
-                style="@style/InputTextStyle"
-                android:hint="@string/input8_hint"
                 android:importantForAutofill="no"
                 android:inputType="numberDecimal"/>
 
@@ -99,12 +54,12 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="vertical">
 
             <Button
                 android:id="@+id/inputButton"
                 style="@style/ButtonStyle"
-                android:layout_weight="0.5"
+                android:layout_gravity="center"
                 android:text="@string/input_button_text"/>
 
         </LinearLayout>
