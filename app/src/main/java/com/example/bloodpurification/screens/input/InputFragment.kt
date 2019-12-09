@@ -41,18 +41,9 @@ class InputFragment : Fragment() {
     private fun sendData() {
         var missingInput = false
 
-        // Concentration at start of the treatment
-        var temp = binding.editText1.text.toString()
-        if (temp != "") {
-            viewModel.updateCPre(temp.toDouble())
-        }
-        else {
-            missingInput = true
-            binding.editText1.error = getString(R.string.inputRequiredError)
-        }
+        var temp = binding.editText2.text.toString()
 
         // Total volume
-        temp = binding.editText2.text.toString()
         if (temp != "") {
             viewModel.updateVTotal(temp.toDouble())
         }
@@ -102,24 +93,6 @@ class InputFragment : Fragment() {
         }
 
         // Post treatment bilirubin concentration
-        temp = binding.editText7.text.toString()
-        if (temp != "") {
-            viewModel.updateCPost(temp.toDouble())
-        }
-        else {
-            missingInput = true
-            binding.editText7.error = getString(R.string.inputRequiredError)
-        }
-
-        // Concentration after 24h
-        temp = binding.editText8.text.toString()
-        if (temp != "") {
-           viewModel.updateCEnd(temp.toDouble())
-        }
-        else {
-            missingInput = true
-            binding.editText8.error = getString(R.string.inputRequiredError)
-        }
 
         if (!missingInput) {
             navController.navigate(R.id.action_input_to_simulation)
