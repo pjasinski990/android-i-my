@@ -9,17 +9,14 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.bloodpurification.R
 import com.example.bloodpurification.databinding.FragmentInputBinding
-import com.example.bloodpurification.recycler.PointAdapter
 
 class InputFragment : Fragment() {
 
     private lateinit var viewModel: InputViewModel
     private lateinit var binding: FragmentInputBinding
     private lateinit var navController : NavController
-    private lateinit var adapter: PointAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -35,22 +32,10 @@ class InputFragment : Fragment() {
 
         navController = findNavController()
 
-        adapter = PointAdapter(viewModel.pointsList.value)
-        binding.recycler.adapter = adapter
-        binding.recycler.layoutManager = LinearLayoutManager(this.context)
-        binding.addButton.setOnClickListener {
-            addPointView()
-        }
-
         binding.inputButton.setOnClickListener {
             sendData()
         }
         return binding.root
-    }
-
-    private fun addPointView() {
-        viewModel.addPoint()
-        adapter.notifyItemInserted(adapter.itemCount-1)
     }
 
     private fun sendData() {

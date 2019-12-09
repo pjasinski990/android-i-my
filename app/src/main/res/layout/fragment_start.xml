@@ -1,79 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        style="@style/LayoutStyle"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:orientation="vertical"
         tools:context=".screens.start.StartFragment">
 
-        <EditText
-            android:id="@+id/editText1"
-            style="@style/InputTextStyle"
-            android:hint="@string/start1_hint"
-            android:importantForAutofill="no"
-            android:inputType="numberDecimal"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
 
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            <EditText
+                android:id="@+id/editText1"
+                style="@style/InputTextStyle"
+                android:hint="@string/start1_hint"
+                android:importantForAutofill="no"
+                android:inputType="numberDecimal"/>
 
-        <EditText
-            style="@style/InputTextStyle"
-            android:id="@+id/editText2"
+            <EditText
+                style="@style/InputTextStyle"
+                android:id="@+id/editText2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/start2_hint"
+                android:importantForAutofill="no"
+                android:inputType="numberDecimal"/>
+
+
+            <EditText
+                style="@style/InputTextStyle"
+                android:id="@+id/editText3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/start3_hint"
+                android:importantForAutofill="no"
+                android:inputType="numberDecimal"/>
+
+            <EditText
+                style="@style/InputTextStyle"
+                android:id="@+id/editText4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/start4_hint"
+                android:importantForAutofill="no"
+                android:inputType="numberDecimal"/>
+
+            <EditText
+                style="@style/InputTextStyle"
+                android:id="@+id/editText5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/start5_hint"
+                android:importantForAutofill="no"
+                android:inputType="numberDecimal"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/start2_hint"
-            android:importantForAutofill="no"
-            android:inputType="numberDecimal"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/editText1" />
+            android:orientation="horizontal">
 
+            <Button
+                android:id="@+id/addButton"
+                style="@style/ButtonStyle"
+                android:layout_weight="0.5"
+                android:text="@string/add_button_text" />
 
-        <EditText
-            style="@style/InputTextStyle"
-            android:id="@+id/editText3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/start3_hint"
-            android:importantForAutofill="no"
-            android:inputType="numberDecimal"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/editText2" />
+            <Button
+                android:id="@+id/startButton"
+                style="@style/ButtonStyle"
+                android:layout_weight="0.5"
+                android:text="@string/start_button_text"/>
 
-        <EditText
-            style="@style/InputTextStyle"
-            android:id="@+id/editText4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/start4_hint"
-            android:importantForAutofill="no"
-            android:inputType="numberDecimal"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/editText3" />
-
-        <EditText
-            style="@style/InputTextStyle"
-            android:id="@+id/editText5"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/start5_hint"
-            android:importantForAutofill="no"
-            android:inputType="numberDecimal"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/editText4" />
-
-        <Button
-            android:id="@+id/startButton"
-            style="@style/ButtonStyle"
-            android:layout_marginBottom="0dp"
-            android:text="@string/start_button_text"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
+        </LinearLayout>
+    </LinearLayout>
 </layout>
