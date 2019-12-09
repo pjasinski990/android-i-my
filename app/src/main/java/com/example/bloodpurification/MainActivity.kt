@@ -43,12 +43,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun onInputUpdate() {
-
-        val points = arrayOf(
-            DataPoint(0.toDouble(), viewModelInput.cPre.value!!),
-            DataPoint(viewModelInput.tTreatment.value!!, viewModelInput.cPost.value!!),
-            DataPoint(1440.toDouble(), viewModelInput.cEnd.value!!)
-        )
+        val step1 = viewModelInput.tTreatment.value!! / 100
+        val points: Array<DataPoint> = Array(100) {
+            i-> DataPoint(step1*i, 5.toDouble())
+        }
 
         viewModelGraph.updateSeries(points)
     }
