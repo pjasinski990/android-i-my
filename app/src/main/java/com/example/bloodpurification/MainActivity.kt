@@ -1,7 +1,6 @@
 package com.example.bloodpurification
 
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.drawerlayout.widget.DrawerLayout
@@ -38,7 +37,7 @@ class MainActivity : AppCompatActivity() {
         viewModelStart = ViewModelProviders.of(this).get(StartViewModel::class.java)
         viewModelGraph = ViewModelProviders.of(this).get(GraphViewModel::class.java)
 
-        viewModelInput.cEnd.observe(this, Observer<Double> { onInputUpdate() })
+        viewModelInput.vTotal.observe(this, Observer<Double> { onInputUpdate() })
 
     }
 

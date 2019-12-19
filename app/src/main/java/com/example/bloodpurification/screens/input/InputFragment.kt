@@ -95,6 +95,7 @@ class InputFragment : Fragment() {
         // Post treatment bilirubin concentration
 
         if (!missingInput) {
+            viewModel.updateGraphSeries()
             navController.navigate(R.id.action_input_to_simulation)
         }
     }

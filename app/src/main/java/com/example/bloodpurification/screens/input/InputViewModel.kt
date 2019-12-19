@@ -3,8 +3,17 @@ package com.example.bloodpurification.screens.input
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.jjoe64.graphview.series.DataPoint
 
 class InputViewModel : ViewModel(){
+
+    private val _graphSeries = MutableLiveData<ArrayList<DataPoint>>()
+    val graphSeries: LiveData<ArrayList<DataPoint>>
+        get() = _graphSeries
+
+    fun updateGraphSeries() {
+        
+    }
 
     private val _vTotal = MutableLiveData<Double>()
     val vTotal: LiveData<Double>
