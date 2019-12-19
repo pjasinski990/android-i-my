@@ -92,7 +92,15 @@ class InputFragment : Fragment() {
             binding.editText6.error = getString(R.string.inputRequiredError)
         }
 
-        // Post treatment bilirubin concentration
+        // Pre treatment concentration
+        temp = binding.editText7.text.toString()
+        if (temp != "") {
+            viewModel.updateCPre(temp.toDouble())
+        }
+        else {
+            missingInput = true
+            binding.editText7.error = getString(R.string.inputRequiredError)
+        }
 
         if (!missingInput) {
             viewModel.updateGraphSeries()

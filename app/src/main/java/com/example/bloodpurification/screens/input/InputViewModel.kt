@@ -7,12 +7,18 @@ import com.jjoe64.graphview.series.DataPoint
 
 class InputViewModel : ViewModel(){
 
-    private val _graphSeries = MutableLiveData<ArrayList<DataPoint>>()
-    val graphSeries: LiveData<ArrayList<DataPoint>>
+    private val _graphSeries = MutableLiveData<Array<DataPoint>>()
+    val graphSeries: LiveData<Array<DataPoint>>
         get() = _graphSeries
 
+    private fun getConcentration(t: Double): Double {
+        return (t*(-clearanceAvg.value!!)*cPre.value!! + genRate.value!!)/((1/3)*vTotal.value!!)
+    }
+
     fun updateGraphSeries() {
-        
+        val step: Double = tTreatment.value!!/100.0
+        val temp = Array(100) { i -> DataPoint(i*step, getConcentration(i*step))}
+        _graphSeries.value = temp
     }
 
     private val _vTotal = MutableLiveData<Double>()
@@ -21,6 +27,14 @@ class InputViewModel : ViewModel(){
 
     fun updateVTotal(newValue : Double) {
         _vTotal.value = newValue
+    }
+
+    private val _cPre = MutableLiveData<Double>()
+    val cPre: LiveData<Double>
+        get() = _cPre
+
+    fun updateCPre(newValue: Double) {
+        _cPre.value = newValue
     }
 
     private val _clearanceInter = MutableLiveData<Double>()

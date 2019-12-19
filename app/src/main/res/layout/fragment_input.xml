@@ -49,6 +49,13 @@
                 android:importantForAutofill="no"
                 android:inputType="numberDecimal"/>
 
+            <EditText
+                android:id="@+id/editText7"
+                style="@style/InputTextStyle"
+                android:hint="@string/input6_hint"
+                android:importantForAutofill="no"
+                android:inputType="numberDecimal"/>
+
         </LinearLayout>
 
         <LinearLayout
