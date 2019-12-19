@@ -20,7 +20,7 @@ class StartViewModel : ViewModel() {
            Log.e("StartViewModel", "_pointsList.value is null, returning")
             return
         }
-        _pointsList.value!!.add(Point())
+        _pointsList.value?.add(Point())
     }
 
 }

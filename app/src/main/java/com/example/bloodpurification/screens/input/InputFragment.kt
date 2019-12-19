@@ -33,12 +33,12 @@ class InputFragment : Fragment() {
         navController = findNavController()
 
         binding.inputButton.setOnClickListener {
-            sendData()
+            updateViewModelData()
         }
         return binding.root
     }
 
-    private fun sendData() {
+    private fun updateViewModelData() {
         var missingInput = false
 
         var temp = binding.editText2.text.toString()
