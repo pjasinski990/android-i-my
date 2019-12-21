@@ -44,18 +44,12 @@ class InputFragment : Fragment() {
         var temp = binding.editText1.text.toString()
 
         // Pre treatment concentration
-
         if (temp != "") {
             viewModel.updateCPre(temp.toDouble())
         }
         else {
             missingInput = true
             binding.editText1.error = getString(R.string.inputRequiredError)
-        }
-
-        if (!missingInput) {
-            viewModel.updateGraphSeries()
-            navController.navigate(R.id.action_input_to_simulation)
         }
 
         // Total volume
@@ -108,5 +102,9 @@ class InputFragment : Fragment() {
             binding.editText6.error = getString(R.string.inputRequiredError)
         }
 
+        if (!missingInput) {
+            viewModel.updateGraphSeries()
+            navController.navigate(R.id.action_input_to_simulation)
+        }
     }
 }
