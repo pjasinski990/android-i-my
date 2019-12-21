@@ -41,9 +41,25 @@ class InputFragment : Fragment() {
     private fun updateViewModelData() {
         var missingInput = false
 
-        var temp = binding.editText2.text.toString()
+        var temp = binding.editText1.text.toString()
+
+        // Pre treatment concentration
+
+        if (temp != "") {
+            viewModel.updateCPre(temp.toDouble())
+        }
+        else {
+            missingInput = true
+            binding.editText1.error = getString(R.string.inputRequiredError)
+        }
+
+        if (!missingInput) {
+            viewModel.updateGraphSeries()
+            navController.navigate(R.id.action_input_to_simulation)
+        }
 
         // Total volume
+        temp = binding.editText2.text.toString()
         if (temp != "") {
             viewModel.updateVTotal(temp.toDouble())
         }
@@ -92,19 +108,5 @@ class InputFragment : Fragment() {
             binding.editText6.error = getString(R.string.inputRequiredError)
         }
 
-        // Pre treatment concentration
-        temp = binding.editText7.text.toString()
-        if (temp != "") {
-            viewModel.updateCPre(temp.toDouble())
-        }
-        else {
-            missingInput = true
-            binding.editText7.error = getString(R.string.inputRequiredError)
-        }
-
-        if (!missingInput) {
-            viewModel.updateGraphSeries()
-            navController.navigate(R.id.action_input_to_simulation)
-        }
     }
 }
