@@ -15,6 +15,13 @@
             android:orientation="vertical">
 
             <EditText
+                android:id="@+id/editText1"
+                style="@style/InputTextStyle"
+                android:hint="@string/input1_hint"
+                android:importantForAutofill="no"
+                android:inputType="numberDecimal"/>
+
+            <EditText
                 android:id="@+id/editText2"
                 style="@style/InputTextStyle"
                 android:hint="@string/input2_hint"
@@ -44,13 +51,6 @@
 
             <EditText
                 android:id="@+id/editText6"
-                style="@style/InputTextStyle"
-                android:hint="@string/input6_hint"
-                android:importantForAutofill="no"
-                android:inputType="numberDecimal"/>
-
-            <EditText
-                android:id="@+id/editText7"
                 style="@style/InputTextStyle"
                 android:hint="@string/input6_hint"
                 android:importantForAutofill="no"
