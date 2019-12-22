@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
@@ -39,7 +40,22 @@ class InputFragment : Fragment() {
     }
 
     private fun updateViewModelData() {
+
         var missingInput = false
+
+//        val fieldsArray: Array<EditText> = arrayOf(
+//            binding.editText1,
+//            binding.editText2,
+//            binding.editText3,
+//            binding.editText4,
+//            binding.editText5,
+//            binding.editText6)
+//
+//        for (editText: EditText in fieldsArray) {
+//            if (editText.text.toString() == "")
+//                editText.error = getString(R.string.inputRequiredError)
+//                missingInput = true
+//        }
 
         var temp = binding.editText1.text.toString()
 
@@ -101,7 +117,6 @@ class InputFragment : Fragment() {
             missingInput = true
             binding.editText6.error = getString(R.string.inputRequiredError)
         }
-
         if (!missingInput) {
             viewModel.updateGraphSeries()
             navController.navigate(R.id.action_input_to_simulation)

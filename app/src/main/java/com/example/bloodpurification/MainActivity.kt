@@ -12,7 +12,6 @@ import com.example.bloodpurification.databinding.ActivityMainBinding
 import com.example.bloodpurification.screens.graph.GraphViewModel
 import com.example.bloodpurification.screens.input.InputViewModel
 import com.example.bloodpurification.screens.start.StartViewModel
-import com.jjoe64.graphview.series.DataPoint
 
 
 class MainActivity : AppCompatActivity() {
@@ -37,20 +36,10 @@ class MainActivity : AppCompatActivity() {
         viewModelStart = ViewModelProviders.of(this).get(StartViewModel::class.java)
         viewModelGraph = ViewModelProviders.of(this).get(GraphViewModel::class.java)
 
-//        viewModelInput.vTotal.observe(this, Observer<Double> { onInputUpdate() })
         viewModelInput.graphSeries.observe(this, Observer {
             viewModelGraph.updateSeries(viewModelInput.graphSeries.value!!)} )
 
     }
-
-//    private fun onInputUpdate() {
-//        val step1 = viewModelInput.tTreatment.value!! / 100
-//        val points: Array<DataPoint> = Array(100) {
-//                i-> DataPoint(step1*i, 5.toDouble())
-//        }
-//
-//        viewModelGraph.updateSeries(points)
-//    }
 
     override fun onSupportNavigateUp(): Boolean {
         val navController = this.findNavController(R.id.myNavHostFragment)
