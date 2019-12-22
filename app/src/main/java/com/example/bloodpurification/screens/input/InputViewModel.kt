@@ -89,7 +89,6 @@ class InputViewModel : ViewModel(){
     private fun centralTreatmentEuler(prevY: Double, prevZ: Double): Double {
         val vCentral = vTotal.value!!/3.toDouble()
         val dy = (genRate.value!! - clearanceAvg.value!!*prevY + clearanceInter.value!!*(prevZ - prevY))/vCentral*step
-        Log.i("InputViewModel", "dy is $dy, v is $vCentral")
         return prevY + dy
     }
     private fun peripheralTreatmentEuler(prevY: Double, prevZ: Double): Double {
@@ -98,6 +97,7 @@ class InputViewModel : ViewModel(){
     }
     private fun centralPostEuler(prevY: Double, prevZ: Double): Double {
         val vCentral = vTotal.value!!/3.toDouble()
-        return (prevZ-prevY)*clearanceInter.value!!*vCentral
+        val dy = (genRate.value!! + clearanceInter.value!!*(prevZ - prevY))/vCentral*step
+        return prevY + dy
     }
 }
