@@ -41,7 +41,6 @@ class GraphFragment : Fragment() {
         })
 
         configureGraph(binding.graph)
-
         return binding.root
     }
 
@@ -50,10 +49,10 @@ class GraphFragment : Fragment() {
         graph.viewport.isScalable = true
         graph.viewport.isXAxisBoundsManual = true
         graph.viewport.setMinX(0.toDouble())
-        graph.viewport.setMaxX(1440.toDouble())
+        graph.viewport.setMaxX(1500.toDouble())
         graph.viewport.isYAxisBoundsManual = true
         graph.viewport.setMinY(0.toDouble())
-        graph.viewport.setMaxY(100.toDouble())
+        graph.viewport.setMaxY(0.2)
         graph.viewport.setScrollableY(true)
     }
 

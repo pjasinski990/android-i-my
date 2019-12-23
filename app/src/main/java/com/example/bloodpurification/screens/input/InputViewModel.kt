@@ -93,7 +93,7 @@ class InputViewModel : ViewModel(){
         val vPeripheral = 2.toDouble()/3.toDouble()*vTotal.value!!
         val dy = (clearanceInter.value!!*(prevY - prevZ))/vPeripheral*step
         Log.i("InputViewModel", "precentral dy is $dy")
-        return prevY + dy
+        return prevZ + dy
     }
     private fun centralPostEuler(prevY: Double, prevZ: Double): Double {
         val vCentral = vTotal.value!!/3.toDouble()
