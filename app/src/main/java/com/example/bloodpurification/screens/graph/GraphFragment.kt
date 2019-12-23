@@ -31,7 +31,14 @@ class GraphFragment : Fragment() {
             R.layout.fragment_graph, container,false)
 
         viewModel = ViewModelProviders.of(activity as FragmentActivity).get(GraphViewModel::class.java)
-        viewModel.graphSeries.observe(this, Observer { drawGraph(viewModel.graphSeries.value)})
+
+        viewModel.graphYSeries.observe(this, Observer {
+            addSeries(viewModel.graphYSeries.value)
+        })
+
+        viewModel.graphZSeries.observe(this, Observer {
+            addSeries(viewModel.graphZSeries.value)
+        })
 
         configureGraph(binding.graph)
 
@@ -47,13 +54,16 @@ class GraphFragment : Fragment() {
         graph.viewport.isYAxisBoundsManual = true
         graph.viewport.setMinY(0.toDouble())
         graph.viewport.setMaxY(100.toDouble())
+        graph.viewport.setScrollableY(true)
     }
 
-    private fun drawGraph(series: LineGraphSeries<DataPoint>?) {
+    private fun clearSeries() {
+        binding.graph.removeAllSeries()
+    }
+    private fun addSeries(series: LineGraphSeries<DataPoint>?) {
         if (series == null)
             Log.e("GraphFragment", "Value passed to drawGraph is null")
         else {
-            binding.graph.removeAllSeries()
             binding.graph.addSeries(series)
         }
     }

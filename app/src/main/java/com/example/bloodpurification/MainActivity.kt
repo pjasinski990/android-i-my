@@ -36,8 +36,11 @@ class MainActivity : AppCompatActivity() {
         viewModelStart = ViewModelProviders.of(this).get(StartViewModel::class.java)
         viewModelGraph = ViewModelProviders.of(this).get(GraphViewModel::class.java)
 
-        viewModelInput.graphSeries.observe(this, Observer {
-            viewModelGraph.updateSeries(viewModelInput.graphSeries.value!!)} )
+        viewModelInput.graphYSeries.observe(this, Observer {
+            viewModelGraph.updateYSeries(viewModelInput.graphYSeries.value!!)} )
+
+        viewModelInput.graphZSeries.observe(this, Observer {
+            viewModelGraph.updateZSeries(viewModelInput.graphZSeries.value!!)} )
 
     }
 

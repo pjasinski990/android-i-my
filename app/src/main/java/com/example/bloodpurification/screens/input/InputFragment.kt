@@ -40,7 +40,6 @@ class InputFragment : Fragment() {
     }
 
     private fun updateViewModelData() {
-
         var missingInput = false
 
 //        val fieldsArray: Array<EditText> = arrayOf(
