@@ -37,9 +37,9 @@ class InputViewModel : ViewModel(){
             prevZ = zArray[i]
         }
 
-        _maxHeight = if (yArray[0] > yArray[pointsCount-1])
+        _maxHeight = if (yArray[0] > yArray[pointsCount-1]) {
             yArray[0]
-        else
+        } else
             yArray[pointsCount-1]
 
         _graphYSeries.value = Array(pointsCount) { i-> DataPoint(xArray[i], yArray[i])}
