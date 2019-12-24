@@ -37,6 +37,11 @@ class InputViewModel : ViewModel(){
             prevZ = zArray[i]
         }
 
+        if (yArray[0] > yArray[pointsCount-1])
+            _maxHeight = yArray[0]
+        else
+            _maxHeight = yArray[pointsCount-1]
+
         _graphYSeries.value = Array(pointsCount) { i-> DataPoint(xArray[i], yArray[i])}
         _graphZSeries.value = Array(pointsCount) { i-> DataPoint(xArray[i], zArray[i])}
     }
@@ -82,6 +87,10 @@ class InputViewModel : ViewModel(){
     fun updateTTreatment(newValue : Double) {
         _tTreatment.value = newValue
     }
+
+    private var _maxHeight = 0.0
+    val maxHeight: Double
+        get() = _maxHeight
 
     private fun centralTreatmentEuler(prevY: Double, prevZ: Double): Double {
         val vCentral = vTotal.value!!/3.toDouble()

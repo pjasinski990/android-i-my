@@ -48,22 +48,23 @@ class GraphFragment : Fragment() {
         graph.viewport.isScrollable = true
         graph.viewport.isScalable = true
         graph.viewport.isXAxisBoundsManual = true
+        graph.viewport.setScrollableY(true)
         graph.viewport.setMinX(0.toDouble())
         graph.viewport.setMaxX(1500.toDouble())
         graph.viewport.isYAxisBoundsManual = true
         graph.viewport.setMinY(0.toDouble())
-        graph.viewport.setMaxY(0.2)
-        graph.viewport.setScrollableY(true)
     }
 
     private fun clearSeries() {
         binding.graph.removeAllSeries()
     }
+
     private fun addSeries(series: LineGraphSeries<DataPoint>?) {
         if (series == null)
             Log.e("GraphFragment", "Value passed to drawGraph is null")
         else {
             binding.graph.addSeries(series)
+            binding.graph.viewport.setMaxY(1.5*viewModel.maxHeight)
         }
     }
 }
