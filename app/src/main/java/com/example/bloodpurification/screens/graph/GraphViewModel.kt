@@ -13,6 +13,7 @@ class GraphViewModel : ViewModel() {
         get() = _graphYSeries
     fun updateYSeries(points: Array<DataPoint>) {
         val series = LineGraphSeries(points)
+        series.title = "Central concentration over time"
         series.color = Color.BLUE
         _graphYSeries.value  = series
     }
@@ -22,6 +23,7 @@ class GraphViewModel : ViewModel() {
         get() = _graphZSeries
     fun updateZSeries(points: Array<DataPoint>) {
         val series = LineGraphSeries(points)
+        series.title = "Peripheral concentration over time"
         series.color = Color.RED
         _graphZSeries.value = series
     }

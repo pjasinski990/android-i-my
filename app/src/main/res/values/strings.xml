@@ -26,4 +26,13 @@
     <string name="concentration">concentration</string>
     <string name="time">time: (minutes)</string>
     <string name="add_button_text">Add point</string>
+
+    <string name="cPreString">Bilirubin concentration at the beginning of the therapy [mg/ml]</string>
+    <string name="totalVolumeString">Volume of both compartments [ml]</string>
+    <string name="KpcString">Intercompartmental clearance [ml/min]</string>
+    <string name="genRateString">Conjugated bilirubin generation rate [mg/min]</string>
+    <string name="avgClearanceString">Conjugated bilirubin clearance (constant) [ml/min]</string>
+    <string name="happyTime">Time in which will be concentration measured [min]</string>
+
+    <string name="invalidValueError">Value has to be greater than zero</string>
 </resources>

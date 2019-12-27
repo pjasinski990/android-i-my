@@ -8,55 +8,103 @@
         android:orientation="vertical"
         tools:context=".screens.input.InputFragment">
 
-        <LinearLayout
+        <ScrollView
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
-            android:orientation="vertical">
+            android:layout_weight="1">
 
-            <EditText
-                android:id="@+id/editText1"
-                style="@style/InputTextStyle"
-                android:hint="@string/input1_hint"
-                android:importantForAutofill="no"
-                android:inputType="numberDecimal"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-            <EditText
-                android:id="@+id/editText2"
-                style="@style/InputTextStyle"
-                android:hint="@string/input2_hint"
-                android:importantForAutofill="no"
-                android:inputType="numberDecimal"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id = "@+id/cPreLabel"
+                    android:text="@string/cPreString"
+                    style = "@style/LabelTextStyle"/>
 
-            <EditText
-                android:id="@+id/editText3"
-                style="@style/InputTextStyle"
-                android:hint="@string/input3_hint"
-                android:importantForAutofill="no"
-                android:inputType="numberDecimal"/>
+                <EditText
+                    android:id="@+id/editText1"
+                    style="@style/InputTextStyle"
+                    android:hint="@string/input1_hint"
+                    android:importantForAutofill="no"
+                    android:inputType="numberDecimal"/>
 
-            <EditText
-                android:id="@+id/editText4"
-                style="@style/InputTextStyle"
-                android:hint="@string/input4_hint"
-                android:importantForAutofill="no"
-                android:inputType="numberDecimal"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id = "@+id/totalVLabel"
+                    android:text="@string/totalVolumeString"
+                    style = "@style/LabelTextStyle"/>
 
-            <EditText
-                android:id="@+id/editText5"
-                style="@style/InputTextStyle"
-                android:hint="@string/input5_hint"
-                android:importantForAutofill="no"
-                android:inputType="numberDecimal"/>
+                <EditText
+                    android:id="@+id/editText2"
+                    style="@style/InputTextStyle"
+                    android:hint="@string/input2_hint"
+                    android:importantForAutofill="no"
+                    android:inputType="numberDecimal"/>
 
-            <EditText
-                android:id="@+id/editText6"
-                style="@style/InputTextStyle"
-                android:hint="@string/input6_hint"
-                android:importantForAutofill="no"
-                android:inputType="numberDecimal"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id = "@+id/KpcLabel"
+                    android:text="@string/KpcString"
+                    style = "@style/LabelTextStyle"/>
 
-        </LinearLayout>
+                <EditText
+                    android:id="@+id/editText3"
+                    style="@style/InputTextStyle"
+                    android:hint="@string/input3_hint"
+                    android:importantForAutofill="no"
+                    android:inputType="numberDecimal"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id = "@+id/genRateLabel"
+                    android:text="@string/genRateString"
+                    style = "@style/LabelTextStyle"/>
+
+                <EditText
+                    android:id="@+id/editText4"
+                    style="@style/InputTextStyle"
+                    android:hint="@string/input4_hint"
+                    android:importantForAutofill="no"
+                    android:inputType="numberDecimal"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id = "@+id/KavgLabel"
+                    android:text="@string/avgClearanceString"
+                    style = "@style/LabelTextStyle"/>
+
+                <EditText
+                    android:id="@+id/editText5"
+                    style="@style/InputTextStyle"
+                    android:hint="@string/input5_hint"
+                    android:importantForAutofill="no"
+                    android:inputType="numberDecimal"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id = "@+id/timeLabel"
+                    android:text="@string/happyTime"
+                    style = "@style/LabelTextStyle"/>
+
+                <EditText
+                    android:id="@+id/editText6"
+                    style="@style/InputTextStyle"
+                    android:hint="@string/input6_hint"
+                    android:importantForAutofill="no"
+                    android:inputType="numberDecimal"/>
+
+            </LinearLayout>
+        </ScrollView>
+
 
         <LinearLayout
             android:layout_width="match_parent"

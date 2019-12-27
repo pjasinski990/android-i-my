@@ -17,12 +17,15 @@
         <item name="android:textSize">@dimen/font_size_default</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingLeft">@dimen/layouts_padding</item>
     </style>
 
     <style name="LabelTextStyle" parent="AppTheme">
         <item name="android:textSize">@dimen/font_size_small</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingTop">@dimen/layouts_padding</item>
+        <item name="android:paddingLeft">@dimen/layouts_padding</item>
     </style>
 
     <style name="ButtonStyle" parent="AppTheme">
