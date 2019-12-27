@@ -13,6 +13,7 @@ import androidx.lifecycle.ViewModelProviders
 import com.example.bloodpurification.R
 import com.example.bloodpurification.databinding.FragmentGraphBinding
 import com.jjoe64.graphview.GraphView
+import com.jjoe64.graphview.LegendRenderer
 import com.jjoe64.graphview.series.DataPoint
 import com.jjoe64.graphview.series.LineGraphSeries
 
@@ -33,9 +34,9 @@ class GraphFragment : Fragment() {
         viewModel = ViewModelProviders.of(activity as FragmentActivity).get(GraphViewModel::class.java)
 
         viewModel.graphYSeries.observe(this, Observer {
+            clearSeries()
             addSeries(viewModel.graphYSeries.value)
         })
-
         viewModel.graphZSeries.observe(this, Observer {
             addSeries(viewModel.graphZSeries.value)
         })
@@ -53,6 +54,12 @@ class GraphFragment : Fragment() {
         graph.viewport.setMaxX(1500.toDouble())
         graph.viewport.isYAxisBoundsManual = true
         graph.viewport.setMinY(0.toDouble())
+        graph.legendRenderer.align = LegendRenderer.LegendAlign.TOP
+        graph.legendRenderer.isVisible = true
+    }
+
+    private fun clearSeries() {
+         binding.graph.removeAllSeries()
     }
 
     private fun addSeries(series: LineGraphSeries<DataPoint>?) {
