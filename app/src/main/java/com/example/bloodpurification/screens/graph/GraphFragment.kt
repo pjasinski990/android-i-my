@@ -55,10 +55,6 @@ class GraphFragment : Fragment() {
         graph.viewport.setMinY(0.toDouble())
     }
 
-    private fun clearSeries() {
-        binding.graph.removeAllSeries()
-    }
-
     private fun addSeries(series: LineGraphSeries<DataPoint>?) {
         if (series == null)
             Log.e("GraphFragment", "Value passed to drawGraph is null")

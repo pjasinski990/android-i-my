@@ -42,81 +42,32 @@ class InputFragment : Fragment() {
     private fun updateViewModelData() {
         var missingInput = false
 
-//        val fieldsArray: Array<EditText> = arrayOf(
-//            binding.editText1,
-//            binding.editText2,
-//            binding.editText3,
-//            binding.editText4,
-//            binding.editText5,
-//            binding.editText6)
-//
-//        for (editText: EditText in fieldsArray) {
-//            if (editText.text.toString() == "")
-//                editText.error = getString(R.string.inputRequiredError)
-//                missingInput = true
-//        }
+        val fieldsArray: Array<EditText> = arrayOf(
+            binding.editText1,
+            binding.editText2,
+            binding.editText3,
+            binding.editText4,
+            binding.editText5,
+            binding.editText6)
 
-        var temp = binding.editText1.text.toString()
-
-        // Pre treatment concentration
-        if (temp != "") {
-            viewModel.updateCPre(temp.toDouble())
-        }
-        else {
-            missingInput = true
-            binding.editText1.error = getString(R.string.inputRequiredError)
+        for (editText: EditText in fieldsArray) {
+            if (editText.text.toString() == "") {
+                editText.error = getString(R.string.inputRequiredError)
+                missingInput = true
+            }
+            else if (editText.text.toString().toDouble() <= 0.toDouble()) {
+                editText.error = getString(R.string.invalidValueError)
+            }
         }
 
-        // Total volume
-        temp = binding.editText2.text.toString()
-        if (temp != "") {
-            viewModel.updateVTotal(temp.toDouble())
-        }
-        else {
-            missingInput = true
-            binding.editText2.error = getString(R.string.inputRequiredError)
-        }
-
-        // Intercompartmental clearance
-        temp = binding.editText3.text.toString()
-        if (temp != "") {
-            viewModel.updateClearanceInter(temp.toDouble())
-        }
-        else {
-            missingInput = true
-            binding.editText3.error = getString(R.string.inputRequiredError)
-        }
-
-        // Bilirubin generation rate
-        temp = binding.editText4.text.toString()
-        if (temp != "") {
-            viewModel.updateGenRate(temp.toDouble())
-        }
-        else {
-            missingInput = true
-            binding.editText4.error = getString(R.string.inputRequiredError)
-        }
-
-        // Average clearance
-        temp = binding.editText5.text.toString()
-        if (temp != "") {
-            viewModel.updateClearanceAvg(temp.toDouble())
-        }
-        else {
-            missingInput = true
-            binding.editText5.error = getString(R.string.inputRequiredError)
-        }
-
-        // Time of treatment
-        temp = binding.editText6.text.toString()
-        if (temp != "") {
-            viewModel.updateTTreatment(temp.toDouble())
-        }
-        else {
-            missingInput = true
-            binding.editText6.error = getString(R.string.inputRequiredError)
-        }
         if (!missingInput) {
+            viewModel.updateCPre(binding.editText1.text.toString().toDouble())
+            viewModel.updateVTotal(binding.editText2.text.toString().toDouble())
+            viewModel.updateClearanceInter(binding.editText3.text.toString().toDouble())
+            viewModel.updateGenRate(binding.editText4.text.toString().toDouble())
+            viewModel.updateClearanceAvg(binding.editText5.text.toString().toDouble())
+            viewModel.updateTTreatment(binding.editText6.text.toString().toDouble())
+
             viewModel.updateGraphSeries()
             navController.navigate(R.id.action_input_to_simulation)
         }

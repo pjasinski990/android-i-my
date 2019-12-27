@@ -11,10 +11,12 @@ class InputViewModel : ViewModel(){
     private val pointsCount = 1000
     private val step = 24.toDouble()*60.toDouble()/pointsCount.toDouble()
 
+    //Array for central compartment graph points
     private val _graphYSeries = MutableLiveData<Array<DataPoint>>()
     val graphYSeries: LiveData<Array<DataPoint>>
         get() = _graphYSeries
 
+    //Array for peripheral compartment graph points
     private val _graphZSeries = MutableLiveData<Array<DataPoint>>()
     val graphZSeries: LiveData<Array<DataPoint>>
         get() = _graphZSeries
@@ -37,6 +39,7 @@ class InputViewModel : ViewModel(){
             prevZ = zArray[i]
         }
 
+        //For graph height scaling
         _maxHeight = if (yArray[0] > yArray[pointsCount-1]) {
             yArray[0]
         } else
