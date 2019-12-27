@@ -21,6 +21,7 @@ class GraphViewModel : ViewModel() {
     private val _graphZSeries = MutableLiveData<LineGraphSeries<DataPoint>>()
     val graphZSeries: LiveData<LineGraphSeries<DataPoint>>
         get() = _graphZSeries
+
     fun updateZSeries(points: Array<DataPoint>) {
         val series = LineGraphSeries(points)
         series.title = "Peripheral concentration over time"

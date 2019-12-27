@@ -26,22 +26,19 @@ class InputFragment : Fragment() {
     ): View? {
         binding = DataBindingUtil.inflate(inflater,
             R.layout.fragment_input, container,false)
-
         viewModel = activity?.run {
             ViewModelProviders.of(this)[InputViewModel::class.java]
         } ?: throw Exception("Invalid Activity")
-
         navController = findNavController()
 
         binding.inputButton.setOnClickListener {
             updateViewModelData()
         }
+
         return binding.root
     }
 
     private fun updateViewModelData() {
-        var missingInput = false
-
         val fieldsArray: Array<EditText> = arrayOf(
             binding.editText1,
             binding.editText2,
@@ -50,6 +47,7 @@ class InputFragment : Fragment() {
             binding.editText5,
             binding.editText6)
 
+        var missingInput = false
         for (editText: EditText in fieldsArray) {
             if (editText.text.toString() == "") {
                 editText.error = getString(R.string.inputRequiredError)
@@ -57,6 +55,7 @@ class InputFragment : Fragment() {
             }
             else if (editText.text.toString().toDouble() <= 0.toDouble()) {
                 editText.error = getString(R.string.invalidValueError)
+                missingInput = true
             }
         }
 

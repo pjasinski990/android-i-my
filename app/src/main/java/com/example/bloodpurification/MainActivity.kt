@@ -1,6 +1,7 @@
 package com.example.bloodpurification
 
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.drawerlayout.widget.DrawerLayout
@@ -37,14 +38,22 @@ class MainActivity : AppCompatActivity() {
         viewModelGraph = ViewModelProviders.of(this).get(GraphViewModel::class.java)
 
         viewModelInput.graphYSeries.observe(this, Observer {
-            viewModelGraph.updateYSeries(viewModelInput.graphYSeries.value!!)
-            viewModelGraph.updateMaxHeight(viewModelInput.maxHeight)
+            if (viewModelInput.graphYSeries.value == null) {
+                Log.e("MainActivity", "passed graphYSeries is null")
+            } else {
+                viewModelGraph.updateYSeries(viewModelInput.graphYSeries.value!!)
+                viewModelGraph.updateMaxHeight(viewModelInput.maxHeight)
+            }
         })
 
-
         viewModelInput.graphZSeries.observe(this, Observer {
-            viewModelGraph.updateZSeries(viewModelInput.graphZSeries.value!!)} )
-
+            if (viewModelInput.graphZSeries.value == null) {
+                Log.e("MainActivity", "passed graphZSeries is null")
+            } else {
+                viewModelGraph.updateZSeries(viewModelInput.graphZSeries.value!!)
+                viewModelGraph.updateMaxHeight(viewModelInput.maxHeight)
+            }
+        })
     }
 
     override fun onSupportNavigateUp(): Boolean {
