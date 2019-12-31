@@ -49,6 +49,7 @@ class InputViewModel : ViewModel(){
         _graphZSeries.value = Array(pointsCount) { i-> DataPoint(xArray[i], zArray[i])}
     }
 
+
     private val _vTotal = MutableLiveData<Double>()
     val vTotal: LiveData<Double>
         get() = _vTotal
@@ -90,6 +91,17 @@ class InputViewModel : ViewModel(){
     fun updateTTreatment(newValue : Double) {
         _tTreatment.value = newValue
     }
+
+    private val _inputsArray = arrayOf(
+        cPre,
+        vTotal,
+        clearanceInter,
+        genRate,
+        clearanceAvg,
+        tTreatment
+    )
+    val inputsArray: Array<LiveData<Double>>
+        get() = _inputsArray
 
     private var _maxHeight = 0.0
     val maxHeight: Double

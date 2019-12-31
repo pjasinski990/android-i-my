@@ -14,7 +14,6 @@ import com.example.bloodpurification.screens.graph.GraphViewModel
 import com.example.bloodpurification.screens.input.InputViewModel
 import com.example.bloodpurification.screens.start.StartViewModel
 
-
 class MainActivity : AppCompatActivity() {
     private lateinit var drawerLayout: DrawerLayout
     private lateinit var viewModelInput : InputViewModel

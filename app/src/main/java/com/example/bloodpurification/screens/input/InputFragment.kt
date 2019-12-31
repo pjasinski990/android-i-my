@@ -1,9 +1,12 @@
 package com.example.bloodpurification.screens.input
 
+import android.app.Activity
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
@@ -18,6 +21,7 @@ class InputFragment : Fragment() {
     private lateinit var viewModel: InputViewModel
     private lateinit var binding: FragmentInputBinding
     private lateinit var navController : NavController
+    private lateinit var fieldsArray: Array<EditText>
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -31,21 +35,35 @@ class InputFragment : Fragment() {
         } ?: throw Exception("Invalid Activity")
         navController = findNavController()
 
-        binding.inputButton.setOnClickListener {
-            updateViewModelData()
-        }
-
-        return binding.root
-    }
-
-    private fun updateViewModelData() {
-        val fieldsArray: Array<EditText> = arrayOf(
+        fieldsArray = arrayOf(
             binding.editText1,
             binding.editText2,
             binding.editText3,
             binding.editText4,
             binding.editText5,
             binding.editText6)
+
+        binding.inputButton.setOnClickListener {
+            updateViewModelData()
+            navController.navigate(R.id.action_input_to_simulation)
+
+            val imm: InputMethodManager = context?.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            imm.hideSoftInputFromWindow(view?.rootView?.windowToken, 0)
+        }
+
+        updateInputFields()
+        return binding.root
+    }
+
+    private fun updateInputFields() {
+        for (i in fieldsArray.indices) {
+            if (viewModel.inputsArray[i].value != null) {
+                fieldsArray[i].setText(viewModel.inputsArray[i].value.toString())
+            }
+        }
+    }
+
+    private fun updateViewModelData() {
 
         var missingInput = false
         for (editText: EditText in fieldsArray) {
@@ -68,7 +86,6 @@ class InputFragment : Fragment() {
             viewModel.updateTTreatment(binding.editText6.text.toString().toDouble())
 
             viewModel.updateGraphSeries()
-            navController.navigate(R.id.action_input_to_simulation)
         }
     }
 }
